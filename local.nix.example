@@ -1,0 +1,14 @@
+# Template for local.nix (which is gitignored and holds your personal values).
+# On a fresh checkout:
+#   cp local.nix.example local.nix   # then edit in your real values
+#   sudo nix flake update localcfg
+#   sudo nixos-rebuild switch --flake /etc/nixos#framework-16
+{
+  fullName = "Your Name";
+  rustdeskRelay = "relay.example.com";
+  lanServerIp = "192.168.0.1";
+  lanSubnet = "192.168.0."; # trailing dot; substituted into samba "hosts allow"
+  sshAuthorizedKeys = [
+    "ssh-ed25519 AAAA... your-key-comment"
+  ];
+}
